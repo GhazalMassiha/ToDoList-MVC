@@ -1,31 +1,123 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 10px 20px;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+    header nav {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+            header nav a:hover {
+                text-decoration: underline;
+            }
+
+main.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #666;
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+/* Table styling */
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+    .todo-table th,
+    .todo-table td {
+        border: 1px solid #e0e0e0;
+        padding: 12px 8px;
+        text-align: right;
+    }
+
+    .todo-table th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+    }
+
+    .todo-table tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .todo-table tr.status-done {
+        background-color: #d4edda; /* light green */
+        color: #155724;
+    }
+
+    .todo-table tr.status-pending {
+        background-color: #d1ecf1; /* light blue */
+        color: #0c5460;
+    }
+
+    .todo-table tr.status-overdue {
+        background-color: #f8d7da; /* light red */
+        color: #721c24;
+    }
+
+/* Form styling */
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    form button:hover {
+        background-color: #0069d9;
+    }
+
+.error {
+    color: #dc3545;
+    margin-top: 10px;
 }

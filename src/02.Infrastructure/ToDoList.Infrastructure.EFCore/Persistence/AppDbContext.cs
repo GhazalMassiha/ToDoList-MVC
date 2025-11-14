@@ -2,6 +2,7 @@
 using ToDoList.Domain.Core.CategoryAgg.Entities;
 using ToDoList.Domain.Core.ToDoItemAgg.Entities;
 using ToDoList.Domain.Core.UserAgg.Entities;
+using ToDoList.Infrastructure.EFCore.Configurations;
 
 namespace ToDoList.Infrastructure.EFCore.Persistence
 {
@@ -18,6 +19,10 @@ namespace ToDoList.Infrastructure.EFCore.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new ToDoItemConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryConfigurations());
         }
     }
 }

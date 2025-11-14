@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Framework", "00.Framework", "{BD70ED1D-8C4A-4385-81BC-1E14D9F75D3B}"
-	ProjectSection(SolutionItems) = preProject
-		PersianDateExtensionMethods.cs = PersianDateExtensionMethods.cs
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Domain", "01.Domain", "{ACC707C5-92B7-4B0D-8BCB-FADACD550F4E}"
 EndProject
@@ -33,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Infrastructure.EFCore", "src\02.Infrastructure\ToDoList.Infrastructure.EFCore\ToDoList.Infrastructure.EFCore.csproj", "{975FEA12-2E34-4CDF-AEE8-16F5544314C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Presentation.MVC", "src\03.Presentation\ToDoList.Presentation.MVC\ToDoList.Presentation.MVC.csproj", "{0569F182-2605-4861-AC87-348132B0DDF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoList.Framework", "src\00.Framework\ToDoList.Framework\ToDoList.Framework.csproj", "{1B559C06-64B3-488F-8381-FA8BD3DBB1F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +59,10 @@ Global
 		{0569F182-2605-4861-AC87-348132B0DDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0569F182-2605-4861-AC87-348132B0DDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0569F182-2605-4861-AC87-348132B0DDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B559C06-64B3-488F-8381-FA8BD3DBB1F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B559C06-64B3-488F-8381-FA8BD3DBB1F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B559C06-64B3-488F-8381-FA8BD3DBB1F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B559C06-64B3-488F-8381-FA8BD3DBB1F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +81,7 @@ Global
 		{5733CC12-6C54-496D-8A84-629736FBFFC5} = {A1E7B539-007F-471E-B0EF-8A1C59D79D10}
 		{975FEA12-2E34-4CDF-AEE8-16F5544314C3} = {D33DC629-7917-474B-B041-7781D19AD648}
 		{0569F182-2605-4861-AC87-348132B0DDF5} = {D7FF41E9-DBDC-4A79-BA0B-6BA15924BF5C}
+		{1B559C06-64B3-488F-8381-FA8BD3DBB1F7} = {BD70ED1D-8C4A-4385-81BC-1E14D9F75D3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {084A7E0C-3067-45BD-948D-BD93A9B243AE}

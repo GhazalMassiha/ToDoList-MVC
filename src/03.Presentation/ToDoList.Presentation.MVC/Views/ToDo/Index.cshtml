@@ -1,0 +1,83 @@
+﻿@model List<ToDoList.Presentation.MVC.Models.TodoItemViewModel>
+@using ToDoList.Framework
+@{
+    ViewBag.Title = "لیست کارها";
+    var categories = ViewBag.Categories as List<ToDoList.Domain.Core.CategoryAgg.DTOs.CategoryDto>;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Index" method="get" class="mb-4">
+    <div class="form-group">
+        <input type="text" name="search" value="@ViewBag.Search" placeholder="جست‌وجو..." class="form-control" />
+    </div>
+    <div class="form-group">
+        <select name="categoryId" class="form-control">
+            <option value="">همه دسته‌ها</option>
+            @foreach (var cat in categories)
+            {
+                <option value="@cat.Id">@cat.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <select name="sort" class="form-control">
+            <option value="">بدون ترتیب</option>
+            <option value="Title">عنوان</option>
+            <option value="DueDate">تاریخ سررسید</option>
+            <option value="IsCompleted">وضعیت</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-secondary">اعمال</button>
+</form>
+
+<table class="todo-table table">
+    <thead class="thead-light">
+        <tr>
+            <th>عنوان</th>
+            <th>سررسید</th>
+            <th>دسته‌بندی</th>
+            <th>وضعیت</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        string rowCss;
+        string statusText;
+
+        if (item.IsCompleted)
+        {
+            rowCss = "status-done";
+            statusText = "انجام‌شده";
+        }
+        else if (!item.IsCompleted && item.DueDate < DateTime.Now)
+        {
+            rowCss = "status-overdue";
+            statusText = "عقب‌افتاده";
+        }
+        else
+        {
+            rowCss = "status-pending";
+            statusText = "در حال انتظار";
+        }
+
+        <tr class="@rowCss">
+            <td>@item.Title</td>
+            <td>@item.DueDate.ToPersianString()</td>
+            <td>@item.CategoryName</td>
+            <td>@statusText</td>
+            <td>
+                <a asp-action="Toggle" asp-route-id="@item.Id" class="btn btn-sm btn-warning">تغییر وضعیت</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">حذف</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Create" class="btn btn-success">افزودن کار جدید</a>
+</div>
+

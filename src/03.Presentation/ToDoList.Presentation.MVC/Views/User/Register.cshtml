@@ -1,0 +1,28 @@
+﻿@model ToDoList.Presentation.MVC.Models.RegisterViewModel
+@{
+    ViewBag.Title = "ثبت‌نام";
+}
+
+<h2>ثبت‌نام</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label>نام کاربری:</label>
+        <input asp-for="Username" />
+    </div>
+    <div>
+        <label>رمز عبور:</label>
+        <input asp-for="Password" type="password" />
+    </div>
+    <button type="submit">ثبت‌نام</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="error">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+}
