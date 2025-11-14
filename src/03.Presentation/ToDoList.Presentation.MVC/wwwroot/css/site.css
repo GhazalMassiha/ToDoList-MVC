@@ -1,4 +1,4 @@
-body {
+﻿body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     direction: rtl;
     background-color: #f0f2f5;
@@ -120,4 +120,47 @@ form button {
 .error {
     color: #dc3545;
     margin-top: 10px;
+}
+
+.home-hero {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+    .home-hero .container h1 {
+        margin-bottom: 1rem;
+    }
+
+    .home-hero .container p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+.home-features {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+    .home-features i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #007bff;
+    }
+
+    .home-features h3 {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .home-features p {
+        color: #555;
+    }
+
+.home-footer {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    color: #666;
 }
